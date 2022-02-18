@@ -1,8 +1,8 @@
 const GreenWave = () => {
     return (
-        <svg
-            width="532"
-            height="397"
+        <div className="green-wave">
+            <svg
+            width="343"
             viewBox="0 0 532 397"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -12,6 +12,7 @@ const GreenWave = () => {
                 fill="#2EC76D"
             />
         </svg>
+        </div>
     );
 };
 

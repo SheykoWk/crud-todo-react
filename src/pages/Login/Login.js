@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import GreenWave from "../../images/GreenWave"
+import "./Login.css"
 
 const Login = ({ onCredentialsValue }) => {
     const {
@@ -16,8 +18,9 @@ const Login = ({ onCredentialsValue }) => {
         });
     };
     return (
-        <div>
-            <div>
+        <div className="login">
+            <GreenWave />
+            <div className="login-container">
                 <div>
                     <Link to="/login">Iniciar Sesión</Link>
                     <Link to="/signin">Registrarme</Link>

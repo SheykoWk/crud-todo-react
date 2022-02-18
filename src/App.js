@@ -39,7 +39,6 @@ function App() {
     }, [credentials, token])
     return (
         <div className="App">
-            {token}
             <Routes>
                 <Route path="/"  element={ isUser ? <Home token={token} /> : <Login onCredentialsValue={handleCredentials}/>}/>
                 <Route path="/login" element={ <Login onCredentialsValue={handleCredentials}/>} />

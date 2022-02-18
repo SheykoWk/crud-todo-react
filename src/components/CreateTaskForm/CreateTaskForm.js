@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import createTask from "../../services/createTask";
 
-const TaskForm = () => {
+const TaskForm = ({token}) => {
     const {
         handleSubmit,
         register,
@@ -10,8 +10,7 @@ const TaskForm = () => {
     } = useForm();
 
     const onSubmitCreate = (data) => {
-        console.log(data);
-        createTask(data).then((res) => {
+        createTask(data, token).then((res) => {
             console.log(res);
         });
         reset({
@@ -24,7 +23,7 @@ const TaskForm = () => {
             <label htmlFor="name">Nombre de la tarea </label>
             <input
                 id="name"
-                placeholder="Escribe tu correo electrónico"
+                placeholder="Nombre de la tarea"
                 type="text"
                 {...register("name", {
                     required: true,
@@ -37,29 +36,29 @@ const TaskForm = () => {
             {errors?.name?.type === "maxLength" && (
                 <p>El titulo debe tener maximo 50 caracteres.</p>
             )}
-            <label htmlFor="password">Contraseña</label>
+            <label htmlFor="description">Descripcion</label>
             <input
-                id="password"
-                placeholder="Al menos 8 caracteres"
-                type="password"
-                {...register("password", {
+                id="description"
+                placeholder="Maximo 150 caracteres"
+                type="text"
+                {...register("description", {
                     required: true,
-                    minLength: 6,
+                    maxLength: 150,
                 })}
             />
             {errors?.password?.type === "required" && (
                 <p>Este campo es requerido</p>
             )}
             {errors?.password?.type === "minLength" && (
-                <p>La contraseña debe tener al menos 8 caracteres</p>
+                <p>La descripcion no puede ser mayor a 150 caracteres</p>
             )}
             <input type="submit" value="Aceptar" />
         </form>
     );
 };
 
-const CreateTaskForm = ({ onDisplay }) => {
-    return <>{onDisplay ? <TaskForm /> : null}</>;
+const CreateTaskForm = ({ onDisplay, token}) => {
+    return <>{onDisplay ? <TaskForm token={token}/> : null}</>;
 };
 
 export default CreateTaskForm;

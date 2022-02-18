@@ -8,7 +8,7 @@ const Home = ({token}) => {
 
     const [tasksAvailable, setTasksAvailable] = useState(false)
     const [tasks, setTasks] = useState([])
-    const [formDisplay, setFormDisplay] = useState(false)
+    const [formDisplay, setFormDisplay] = useState(true)
 
     const handleDisplayForm = (value) => {
         setFormDisplay(value)
@@ -18,21 +18,21 @@ const Home = ({token}) => {
         return <Tasks title={task.name} description={task.description} key={task.id}/>
     })
 
-
+    console.log("home", token)
     useEffect(() => {
         if(token){
             setTasksAvailable(true)
             getTasks(token).then((res) => {
                 console.log(res.data)
                 setTasks(res.data)
-            })
+            }).catch(err => console.error(err))
         }
     }, [token])
 
     return(
         <div>
             <CreateTaskButton onDisplayForm={handleDisplayForm} />
-            <CreateTaskForm onDisplay={formDisplay} />
+            <CreateTaskForm onDisplay={formDisplay} token={token}/>
             {tasksAvailable ? listTask : null}
         </div>
     )

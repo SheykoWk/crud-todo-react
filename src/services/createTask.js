@@ -1,8 +1,20 @@
-import axios from 'axios';
-const createTask = async (data) => {
-    const BASE_URL = "https://tasks-crud.academlo.com/api/tasks"
-    const response = await axios.post(BASE_URL, data)
-    return response
-}
+import axios from "axios";
+const createTask = async (data, token) => {
+    console.log(data, "create task");
+    const BASE_URL = "https://tasks-crud.academlo.com/api/tasks";
+    const response = await axios.post(
+        BASE_URL,
+        {
+            name: data.name,
+            description: data.description,
+        },
+        {
+            headers: {
+                Authorization: "Bearer " + token,
+            },
+        }
+    );
+    return response;
+};
 
-export default createTask
+export default createTask;
