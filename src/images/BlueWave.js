@@ -1,8 +1,8 @@
 const BlueWave = () => {
     return (
-        <svg
-            width="1277"
-            height="1009"
+        <div className="blue-wave">
+            <svg
+            height="850"
             viewBox="0 0 1277 1009"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -12,6 +12,7 @@ const BlueWave = () => {
                 fill="#0F0F2D"
             />
         </svg>
+        </div>
     );
 };
 

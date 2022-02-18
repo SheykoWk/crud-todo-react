@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import GreenWave from "../../images/GreenWave"
-import "./Login.css"
+import GreenWave from "../../images/GreenWave";
+import BlueWave from "../../images/BlueWave"
+import "./Login.css";
 
 const Login = ({ onCredentialsValue }) => {
     const {
@@ -11,7 +12,7 @@ const Login = ({ onCredentialsValue }) => {
         formState: { errors },
     } = useForm();
     const onSubmitLogin = (data) => {
-        console.log(data)
+        console.log(data);
         onCredentialsValue(data);
         reset({
             query: "",
@@ -21,14 +22,12 @@ const Login = ({ onCredentialsValue }) => {
         <div className="login">
             <GreenWave />
             <div className="login-container">
-                <div>
-                    <Link to="/login">Iniciar Sesión</Link>
-                    <Link to="/signin">Registrarme</Link>
+                <div className="login-button_container">
+                    <Link className="login-button login-btn" to="/">Iniciar Sesión</Link>
+                    <Link className="login-button register-btn" to="/">Registrarme</Link>
                 </div>
-                <h2>Inicio de Sesión</h2>
-                <form
-                    onSubmit={handleSubmit(onSubmitLogin)}
-                >
+                <h2 className="login-header">Inicio de Sesión</h2>
+                <form onSubmit={handleSubmit(onSubmitLogin)}>
                     <label htmlFor="email">Correo Electrónico</label>
                     <input
                         id="email"
@@ -41,8 +40,9 @@ const Login = ({ onCredentialsValue }) => {
                     {errors?.email?.type === "required" && (
                         <p>Este campo es requerido</p>
                     )}
-
+                    <br/>
                     <label htmlFor="password">Contraseña</label>
+                    <br/>
                     <input
                         id="password"
                         placeholder="Al menos 8 caracteres"
@@ -58,9 +58,11 @@ const Login = ({ onCredentialsValue }) => {
                     {errors?.password?.type === "minLength" && (
                         <p>La contraseña debe tener al menos 8 caracteres</p>
                     )}
-                    <input type="submit" value="Aceptar" />
+                    <br/>
+                    <input type="submit" value="Aceptar" className="submit-btn" />
                 </form>
             </div>
+            <BlueWave />
         </div>
     );
 };
