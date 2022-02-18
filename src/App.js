@@ -13,7 +13,7 @@ function App() {
     );
     const [credentials, setCredentials] = useState({})
     const [isUser, setIsUser] = useState(false)
-    const handleCredemtials = (credentialsValue) => {
+    const handleCredentials = (credentialsValue) => {
         setCredentials(credentialsValue)
     }
 
@@ -36,13 +36,13 @@ function App() {
                 console.log(err)
             })
         }
-    }, [credentials])
+    }, [credentials, token])
     return (
         <div className="App">
             {token}
             <Routes>
-                <Route path="/"  element={ <Home token={token} />}/>
-                <Route path="/login" element={ <Login onCredentialsValue={handleCredemtials}/>} />
+                <Route path="/"  element={ isUser ? <Home token={token} /> : <Login onCredentialsValue={handleCredentials}/>}/>
+                <Route path="/login" element={ <Login onCredentialsValue={handleCredentials}/>} />
                 <Route path="/signin" element={ <Signin/>} />
             </Routes>
         </div>
