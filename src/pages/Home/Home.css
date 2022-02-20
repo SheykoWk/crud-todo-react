@@ -1,0 +1,88 @@
+.tasks-container{
+    margin: 35px;
+    display: grid;
+    gap: 1rem;
+    grid-auto-rows: 19rem;
+    position: relative;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+}
+
+.header{
+    width: 100%;
+    position: relative;
+    display: flex;
+    margin-bottom: 25px;
+}
+.header h1{
+    margin: 0;
+}
+
+.header .user-icon{
+    position: absolute;
+    right: 15px;
+    top: 5px;
+    background-color: #302f2f;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    display: flex;
+}
+.header .user-icon svg{
+    margin: auto;
+}
+.header-title{
+    width: 120px;
+}
+.search-box{
+    width: 250px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: solid #302f2f 1px;
+}
+.search-box input{
+    all: unset;
+    text-align: left;
+    margin-left: 15px;
+}
+.header-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 60px 50px 20px 50px;
+}
+.newtask-box{
+    width: 335px;
+    background-color: #2ec76d;
+    border: solid #2ec76d 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.newtask-box button:hover {
+    background-color: #fff;
+    color: #2ec76d;
+    fill: #2ec76d;
+}
+.newtask-box button{
+    height: 100%;
+    width: 100%;
+    border: none;
+}
+.newtask-btn{
+    display: flex;
+    border: none;
+    background-color: #2ec76d;
+    width: 200px;
+    margin-left: 5px;  
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    cursor: pointer;
+}
+
+.header-buttons{
+    display: flex;
+}

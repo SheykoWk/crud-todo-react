@@ -59,7 +59,7 @@ const Login = ({ onCredentialsValue }) => {
                         <p>La contraseña debe tener al menos 8 caracteres</p>
                     )}
                     <br/>
-                    <input type="submit" value="Aceptar" className="submit-btn" />
+                    <input type="submit" value="Aceptar" className="main-btn" />
                 </form>
             </div>
             <BlueWave />

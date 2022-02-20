@@ -1,6 +1,7 @@
 const SearchIcon = () => {
     return (
-        <svg
+        <div>
+            <svg
             width="18"
             height="18"
             viewBox="0 0 18 18"
@@ -22,6 +23,7 @@ const SearchIcon = () => {
                 strokeLinejoin="round"
             />
         </svg>
+        </div>
     );
 };
 

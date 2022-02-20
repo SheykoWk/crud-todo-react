@@ -1,0 +1,52 @@
+.task-container {
+    grid-column: span 1;
+    border-radius: 3px;
+    border: solid #d3d3d3 1px;
+}
+
+.task-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    font-size: 0.7rem;
+    padding: 0 15px;
+}
+
+.select-status{
+    padding: 0 15px;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+.select-status select{
+    width: 50%;
+    margin: 10px 0;
+    height: 35px;
+    border: #d3d3d3 solid 1px;
+    border-radius: 3px;
+    background-color: transparent;
+}
+
+.task-description{
+    padding: 0 15px;
+    height: 40%;
+    text-align: justify;
+}
+.task-status{
+    position: relative;
+    bottom: -10px;
+    height: 3px;
+    width: 100%;
+    background-color: aqua;
+}
+.task-container hr{
+    margin: 0 15px;
+}
+
+.task-description-header{
+    font-size: 0.7rem;
+    font-weight: 300;
+    text-align: start;
+    padding: 0 15px;
+}
