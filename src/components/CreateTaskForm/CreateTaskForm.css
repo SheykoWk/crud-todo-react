@@ -1,0 +1,70 @@
+.form {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0202029e;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.form-container {
+    background: #ffffff;
+    width: 350px;
+    height: 400px;
+}
+
+.close-button {
+    background-color: #ffffff;
+    border: none;
+    position: relative;
+    top: 10px;
+    right: -145px;
+}
+
+.form-container form {
+    margin: 15px;
+    text-align: start;
+    
+}
+
+.form-container form input,
+textarea {
+    width: calc(100% - 5px);
+    border: solid #d3d3d3 1px;
+    border-radius: 3px;
+    margin: 15px 0;
+}
+
+.form-container form textarea {
+    height: 100px;
+}
+
+.form-container h2 {
+    margin: 0 15px;
+    text-align: start;
+}
+
+.form-btn-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form-container form input.submit-btn {
+    width: 40%;
+    height: 35px;
+    background-color: #2EC76D;
+    color: #ffffff;
+}
+
+.cancel-btn {
+    width: 40%;
+    height: 35px;
+    border: solid #d3d3d3 1px;
+    border-radius: 3px;
+}

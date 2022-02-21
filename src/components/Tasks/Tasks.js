@@ -15,6 +15,13 @@ const Tasks = ({ title, description, status, id , token}) => {
         { value: "Iniciado", color: "#44c8c6", index: 2 },
     ];
     
+    const handleChange = (event) => {
+        setCurrentStatus(event.target.value)
+        const changedStatus = statusCompare.find((status) => status.value === event.target.value)
+        console.log(changedStatus)
+        assignStatus(id, changedStatus.index + 1 )
+    }
+
     
     useEffect(() => {
         const statusCompare = [
@@ -41,13 +48,7 @@ const Tasks = ({ title, description, status, id , token}) => {
             <div className="select-status">
                 <select
                     value={currentStatus.value}
-                    onChange={(e) =>{
-                        setCurrentStatus(
-                            statusCompare[e.target.options.selectedIndex]
-                        )
-                        console.log(id)
-                        assignStatus(id, currentStatus.index + 1 )
-                    }}
+                    onChange={handleChange}
                 >
                     <option>Terminado</option>
                     <option>En pausa</option>

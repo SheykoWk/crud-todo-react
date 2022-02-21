@@ -10,10 +10,14 @@ import PlusIcon from "../../images/PlusIcon";
 const Home = ({ token }) => {
     const [tasksAvailable, setTasksAvailable] = useState(false);
     const [tasks, setTasks] = useState([]);
-    const [formDisplay, setFormDisplay] = useState(true);
+    const [formDisplay, setFormDisplay] = useState(false);
 
     const handleSetTasks = (data) => {
         setTasks([...tasks, data])
+    }
+
+    const handleSetDisplay = (boolean) => {
+        setFormDisplay(boolean)
     }
 
     const listTask = tasks.map((task) => {
@@ -28,18 +32,18 @@ const Home = ({ token }) => {
             />
         );
     });
-
+    
     useEffect(() => {
         if (token) {
             setTasksAvailable(true);
             getTasks(token)
-                .then((res) => {
-                    setTasks(res.data);
-                })
-                .catch((err) => console.error(err));
+            .then((res) => {
+                setTasks(res.data);
+            })
+            .catch((err) => console.error(err));
         }
     }, [token]);
-
+    
     return (
         <div>
             <div className="header">
@@ -63,7 +67,7 @@ const Home = ({ token }) => {
                     </div>
                 </div>
             </div>
-            <CreateTaskForm onDisplay={formDisplay} token={token} onNewTask={handleSetTasks} />
+            <CreateTaskForm display={formDisplay} token={token} onNewTask={handleSetTasks} onDisplay={handleSetDisplay} />
             <div className="tasks-container">
                 {tasksAvailable ? listTask : null}
             </div>
