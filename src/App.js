@@ -26,9 +26,7 @@ function App() {
 
     useEffect(() => {
         if(!token){
-            console.log("no hay token")
             loginUser(credentials).then((response) => {
-                console.log(response.data)
                 setLocalStorage(response.data)
             }).catch((err) => {
                 console.log(err)

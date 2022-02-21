@@ -3,7 +3,7 @@ import assignStatus from '../../services/assignStatus';
 import EditIcon from "../../images/EditIcon";
 import "./Task.css";
 
-const Tasks = ({ title, description, status, id , token}) => {
+const Tasks = ({ title, description, status, id }) => {
     const [currentStatus, setCurrentStatus] = useState({
         value: "Iniciado",
         color: "#44c8c6",
@@ -18,7 +18,6 @@ const Tasks = ({ title, description, status, id , token}) => {
     const handleChange = (event) => {
         setCurrentStatus(event.target.value)
         const changedStatus = statusCompare.find((status) => status.value === event.target.value)
-        console.log(changedStatus)
         assignStatus(id, changedStatus.index + 1 )
     }
 

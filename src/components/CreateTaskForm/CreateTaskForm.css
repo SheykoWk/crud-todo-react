@@ -23,6 +23,7 @@
     position: relative;
     top: 10px;
     right: -145px;
+    cursor: pointer;
 }
 
 .form-container form {
@@ -60,6 +61,7 @@ textarea {
     height: 35px;
     background-color: #2EC76D;
     color: #ffffff;
+    cursor: pointer;
 }
 
 .cancel-btn {
@@ -67,4 +69,5 @@ textarea {
     height: 35px;
     border: solid #d3d3d3 1px;
     border-radius: 3px;
+    cursor: pointer;
 }

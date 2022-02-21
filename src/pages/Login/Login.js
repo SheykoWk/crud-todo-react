@@ -12,7 +12,6 @@ const Login = ({ onCredentialsValue }) => {
         formState: { errors },
     } = useForm();
     const onSubmitLogin = (data) => {
-        console.log(data);
         onCredentialsValue(data);
         reset({
             query: "",
