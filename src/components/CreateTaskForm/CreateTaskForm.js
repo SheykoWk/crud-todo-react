@@ -16,6 +16,7 @@ const TaskForm = ({ token, handleSetTasks, onDisplay }) => {
         createTask(data, token).then(async (res) => {
             handleSetTasks(res.data);
             await assignStatus(res.data.id, 1);
+            onDisplay(false)
         });
         reset({
             query: "",
